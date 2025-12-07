@@ -3,13 +3,14 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
+import ContextProvider from "./contexts/AppContext";
 
 let App = () => {
     return (
-        <>
+        <ContextProvider>
             <Navbar />
             <Outlet />
-        </>
+        </ContextProvider>
     );
 };
 

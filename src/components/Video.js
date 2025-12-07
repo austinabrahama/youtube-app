@@ -2,7 +2,7 @@ import { MdVerified } from "react-icons/md";
 
 const Video = ({channel, description, duration, id, link, logo, name, subscribers, thumbnail, uploadTime, views}) => {
   return (
-    <div className="flex flex-col max-w-[260px] cursor-pointer">
+    <div className="flex flex-col w-full xl:max-w-[260px] cursor-pointer">
         <div className="relative w-full">
             <img className="w-full h-full overflow-hidden rounded-2xl" src={thumbnail} alt={name} />
             <p className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-1 rounded font-medium">{duration}</p>

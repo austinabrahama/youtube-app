@@ -1,12 +1,15 @@
 import { SideBarItems } from "../static/data";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../App.css";
+import { AppContext } from "../contexts/AppContext";
 
 const Sidebar = () => {
+    const { showSidebar } = useContext(AppContext);
     const [activeItem, setActiveItem] = useState("Home");
 
     return (
-        <div className="yt-scrollbar bg-yt-black w-65 h-[calc(100vh-56px)] fixed left-0 text-yt-white p-3 overflow-scroll">
+        <>
+        <div className={`yt-scrollbar bg-yt-black h-[calc(100vh-56px)] fixed left-0 text-yt-white overflow-scroll z-[1] ${showSidebar ? 'w-65 p-3 absolute' : 'w-0'}`}>
             <div className="mb-4">
                 {
                     SideBarItems.Top.map((item, index) => {
@@ -15,7 +18,6 @@ const Sidebar = () => {
                             <span className="text-sm font-medium">{item.name}</span>
                         </div>
                     })
-                    
                 }
             </div>
             <hr className="text-yt-light-gray my-2" />
@@ -41,6 +43,7 @@ const Sidebar = () => {
                 }
             </div>
         </div>
+        </>
     )
 }
 

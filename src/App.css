@@ -15,3 +15,7 @@
 .yt-scrollbar::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+.showSidebar {
+  display: block;
+}
