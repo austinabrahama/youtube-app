@@ -7,10 +7,12 @@ import ContextProvider from "./contexts/AppContext";
 
 let App = () => {
     return (
+        <div className="bg-yt-black">
         <ContextProvider>
             <Navbar />
             <Outlet />
         </ContextProvider>
+        </div>
     );
 };
 

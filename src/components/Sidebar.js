@@ -8,12 +8,11 @@ const Sidebar = () => {
     const [activeItem, setActiveItem] = useState("Home");
 
     return (
-        <>
-        <div className={`yt-scrollbar bg-yt-black h-[calc(100vh-56px)] fixed left-0 text-yt-white overflow-scroll z-[1] ${showSidebar ? 'w-65 p-3 absolute' : 'w-0'}`}>
+        <div className={`yt-scrollbar bg-yt-black h-[calc(100vh-56px)] fixed left-0 text-yt-white overflow-scroll z-[1] w-65 p-3 absolute transition-transform duration-300 ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className="mb-4">
                 {
                     SideBarItems.Top.map((item, index) => {
-                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
+                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black active:bg-yt-light-black active:scale-[0.98] ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
                             <span className="mr-5">{item.icon}</span>
                             <span className="text-sm font-medium">{item.name}</span>
                         </div>
@@ -24,7 +23,7 @@ const Sidebar = () => {
             <div className="mb-4">
                 {
                     SideBarItems.Middle.map((item, index) => {
-                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
+                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black active:bg-yt-light-black active:scale-[0.98] ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
                             <span className="mr-5">{item.icon}</span>
                             <span className="text-sm font-medium">{item.name}</span>
                         </div>
@@ -35,7 +34,7 @@ const Sidebar = () => {
             <div className="mb-4">
                 {
                     SideBarItems.Bottom.map((item, index) => {
-                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
+                        return <div className={`flex items-center h-10 px-3 rounded-xl cursor-pointer hover:bg-yt-light-black active:bg-yt-light-black active:scale-[0.98] ${item.name == activeItem ? "bg-yt-light-gray" : "bg-yt-black"}`} key={index} onClick={() => setActiveItem(item.name)}>
                             <span className="mr-5">{item.icon}</span>
                             <span className="text-sm font-medium">{item.name}</span>
                         </div>
@@ -43,7 +42,6 @@ const Sidebar = () => {
                 }
             </div>
         </div>
-        </>
     )
 }
 

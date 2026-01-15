@@ -3,7 +3,13 @@ import React, { useState } from 'react';
 export const AppContext = React.createContext();
 
 const ContextProvider = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  // Initialize based on screen size
+  const [showSidebar, setShowSidebar] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth >= 1280; // Show by default on xl screens
+    }
+    return false;
+  });
   const [showSearchBar, setShowSearchBar] = useState(false);
 
   const toggleSidebar = () => {

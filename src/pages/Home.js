@@ -25,18 +25,18 @@ const Home = () => {
   return (
     <>
       <Sidebar />
-      <div className={`h-full xl:h-[calc(100vh-56px)] bg-yt-black pt-3 pl-4 ml-0  ${showSidebar ? 'xl:ml-[206px]' : ''}`}>
+      <div className={`h-full xl:h-[calc(100vh-56px)] bg-yt-black pt-3 pl-4 ml-0 transition-all duration-300 ${showSidebar ? 'xl:ml-[206px]' : ''}`}>
         <div className="flex flex-row px-3 overflow-x-scroll scrollbar-none">
           {
             Categories.map((category, index) => {
-              return <h2 key={index} className="bg-yt-light-gray text-yt-white cursor-pointer px-3 py-2 mr-3 rounded-lg">{category}</h2>
+              return <h2 key={index} className="bg-yt-light-gray text-yt-white cursor-pointer px-3 py-2 mr-3 rounded-lg active:bg-yt-light-black active:scale-[0.98]">{category}</h2>
             })
           }
         </div>
 
+          <input type="text" />
         <div className="grid grid-cols-yt gap-x-4 gap-y-6 pt-8 px-4">
           {
-            
             videos.length === 0 ? (<h2 className="h-[86vh] text-yt-white">No videos available</h2>) : (
               videos.map((video) => {
                 return (

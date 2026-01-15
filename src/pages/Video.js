@@ -64,7 +64,7 @@ const Video = () => {
       <h2 className="text-yt-white font-bold text-xl pt-3">{data?.name.length > 40 ? data?.name.substring(0, 40) + "..." : data?.name}</h2>
 
       {/* Channel Info and Actions */}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col xl:flex-row justify-between">
         <div className="flex flex-row mt-3 items-center">
           <img className="h-9 w-9 rounded-full" src={data?.logo} alt={data?.channel} />
           <div className="flex flex-col ml-3">
@@ -74,21 +74,21 @@ const Video = () => {
             </h3>
             <p className="text-yt-gray font-medium text-xs">{data?.views} subscribers</p>
           </div>
-          <button className="bg-yt-white py-2 px-5 rounded-full text-yt-black font-semibold ml-3 h-10 hover:bg-yt-gray">Subscribe</button>
+          <button className="bg-yt-white py-2 px-5 rounded-full text-yt-black font-semibold ml-3 h-10 hover:bg-yt-gray active:bg-gray-200 active:scale-[0.98] focus:bg-yt-white focus:outline-none">Subscribe</button>
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center mt-4 xl:mt-0">
           <div className="mr-4 flex flex-row">
-              <button className="h-10 w-20 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray text-yt-white rounded-l-full border-r border-yt-gray"><SlLike className="text-center" size={23} /><span className="ml-2">270</span></button>
-              <button className="h-10 w-12 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray text-yt-white rounded-r-full"><SlDislike className="text-center" size={23} /></button>
+              <button className="h-10 w-20 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray active:bg-yt-light-black active:scale-[0.98] focus:bg-yt-light-black focus:outline-none text-yt-white rounded-l-full border-r border-yt-gray"><SlLike className="text-center" size={23} /><span className="ml-2">270</span></button>
+              <button className="h-10 w-12 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray active:bg-yt-light-black active:scale-[0.98] focus:bg-yt-light-black focus:outline-none text-yt-white rounded-r-full"><SlDislike className="text-center" size={23} /></button>
           </div>
           <div className="mr-4">
-              <button className="h-10 w-24 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray text-yt-white rounded-full"><RiShareForwardLine className="text-center" size={23} /><span className="ml-2">Share</span></button>
+              <button className="h-10 w-24 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray active:bg-yt-light-black active:scale-[0.98] focus:bg-yt-light-black focus:outline-none text-yt-white rounded-full"><RiShareForwardLine className="text-center" size={23} /><span className="ml-2">Share</span></button>
+          </div>
+          <div className="mr-4 hidden xl:block">
+              <button className="h-10 w-32 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray active:bg-yt-light-black active:scale-[0.98] focus:bg-yt-light-black focus:outline-none text-yt-white rounded-full"><HiDownload className="text-center" size={23} /><span className="ml-2">Download</span></button>
           </div>
           <div className="mr-4">
-              <button className="h-10 w-32 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray text-yt-white rounded-full"><HiDownload className="text-center" size={23} /><span className="ml-2">Download</span></button>
-          </div>
-          <div className="mr-4">
-              <button className="h-10 w-10 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray text-yt-white rounded-full"><HiDotsHorizontal className="text-center" size={23} /></button>
+              <button className="h-10 w-10 flex flex-row items-center justify-center bg-yt-light-black hover:bg-yt-light-gray active:bg-yt-light-black active:scale-[0.98] focus:bg-yt-light-black focus:outline-none text-yt-white rounded-full"><HiDotsHorizontal className="text-center" size={23} /></button>
           </div>
         </div>
       </div>
